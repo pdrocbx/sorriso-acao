@@ -1,0 +1,32 @@
+@media (max-width: 980px) {
+  .app-header { grid-template-columns: 1fr auto; }.top-nav { order:3; grid-column:1/-1; justify-self:center; }.header-status { grid-column:2; grid-row:1; }
+  .hero-grid { grid-template-columns: 1fr; gap:34px; padding-top:55px; }.hero-panel { min-height:360px; }.step-grid { grid-template-columns:repeat(2,1fr); }.learn-grid, .prevention-grid { grid-template-columns:1fr 1fr; }.mobile-scene { grid-template-columns:1fr; }.scene-context { border-right:0; border-bottom:1px solid var(--line); }.chat-scene { grid-template-columns:220px 1fr; }.final-grid { grid-template-columns:1fr; }
+}
+@media (max-width: 720px) {
+  .app-header { padding:10px 14px; }.brand-button strong { font-size:.78rem; }.brand-shield { width:30px;height:30px; }.score-chip { display:none; }.progress-chip { padding:7px 10px; }.top-nav { width:100%; overflow:auto; justify-content:flex-start; }.nav-btn { flex:1; min-width:max-content; }
+  .hero-grid { padding:42px 18px 36px; min-height:auto; }.hero-copy h1 { font-size:clamp(2.55rem,13vw,4.4rem); }.hero-copy > p { font-size:1rem; }.hero-panel { min-height:320px; border-radius:24px; }.security-orbit { transform:scale(.83); }.challenge-summary { left:12px; right:12px; bottom:12px; }.challenge-summary > div { padding:10px 6px; }
+  .content-shell { padding:26px 18px 65px; }.page-shell { padding-top:42px; }.step-grid, .scenario-grid, .learn-grid, .prevention-grid { grid-template-columns:1fr; }.step-card { min-height:170px; }.scenario-card p { min-height:auto; }
+  .simulation-toolbar { padding:20px 16px 14px; align-items:flex-start; flex-direction:column; }.simulation-root { padding:0 10px; }.simulation-tools { width:100%; }.simulation-tools .btn { flex:1; }.sim-frame { border-radius:18px; min-height:0; }.action-grid { grid-template-columns:1fr; }.sim-meta-bar { align-items:flex-start; flex-direction:column; }
+  .mail-app { grid-template-columns:1fr; }.mail-sidebar { display:none; }.email-row { grid-template-columns:20px 1fr auto; }.email-row .preview { grid-column:2/4; }.email-row .sender { grid-column:2; }.mail-search { width:70%; }.email-content { padding:22px 16px; }.fake-bank-body { padding:18px; }
+  .mobile-scene { min-height:0; }.scene-context { padding:24px 20px; }.phone-stage { min-height:0; padding:18px 8px; }.phone-shell { width:min(350px,100%); height:590px; border-width:7px; }
+  .chat-scene { grid-template-columns:1fr; min-height:0; }.chat-sidebar { display:none; }.chat-main { min-height:590px; }.chat-area { padding:18px 12px; }.message { max-width:88%; }
+  .result-shell { padding-top:44px; }.result-metrics { grid-template-columns:1fr; }.final-score-card { grid-template-columns:1fr; text-align:center; }.score-ring { margin:0 auto; }.panel-card { padding:20px; }.result-shell h1 { font-size:2.7rem; }
+  .modal { padding:24px 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; transition:none !important; }
+}
+
+@media (max-width: 900px) {
+  .investigation-layout { grid-template-columns:1fr; }
+  .evidence-panel { border-left:0; border-top:1px solid var(--line); }
+  .achievement-grid { grid-template-columns:1fr; }
+}
+@media (max-width: 720px) {
+  .result-metrics { grid-template-columns:repeat(2,1fr); }
+  .icon-btn { width:38px; height:38px; }
+  .header-status { gap:6px; }
+  .evidence-panel { padding:18px 16px; }
+  .journey-item { grid-template-columns:auto 1fr; }
+  .journey-points { grid-column:2; justify-self:start; }
+}
