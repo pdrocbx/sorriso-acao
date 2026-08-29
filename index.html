@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Desafio Anti-Golpe — simulações educativas para reconhecer phishing, SIM Swap, perfis falsos, QR Codes adulterados, falso suporte, golpes em marketplace, vagas falsas e cobranças adulteradas." />
+  <title>Desafio Anti-Golpe</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/simulations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+
+  <header class="app-header" aria-label="Cabeçalho principal">
+    <button class="brand-button" id="brandBtn" aria-label="Voltar para a tela inicial">
+      <span class="brand-shield" data-icon="shield" data-icon-size="20" aria-hidden="true"></span>
+      <span><strong>DESAFIO</strong><small>ANTI-GOLPE</small></span>
+    </button>
+
+    <nav class="top-nav" aria-label="Navegação principal">
+      <button class="nav-btn" data-screen="home">Início</button>
+      <button class="nav-btn" data-screen="learn">Aprenda</button>
+      <button class="nav-btn" data-screen="prevention">Como evitar</button>
+    </nav>
+
+    <div class="header-status" aria-label="Progresso da sessão">
+      <button id="themeBtn" class="icon-btn" aria-label="Alterar tema"></button>
+      <div class="score-chip" title="Pontuação de segurança"><span data-icon="star" data-icon-size="17"></span><span id="scoreValue">0</span></div>
+      <div class="progress-chip"><span id="challengeCounter">0/8</span><div class="mini-progress" aria-hidden="true"><span id="progressDot1"></span><span id="progressDot2"></span><span id="progressDot3"></span><span id="progressDot4"></span><span id="progressDot5"></span><span id="progressDot6"></span><span id="progressDot7"></span><span id="progressDot8"></span></div></div>
+    </div>
+  </header>
+
+  <main id="main-content" tabindex="-1">
+    <section id="screen-home" class="screen active" aria-labelledby="homeTitle">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="status-light"></span> TREINAMENTO INTERATIVO</div>
+          <h1 id="homeTitle">Você saberia identificar um golpe <span>antes que fosse tarde?</span></h1>
+          <p>Entre em situações fictícias, investigue evidências e decida se cada caso parece golpe ou situação legítima. Atenção: nem toda rodada será necessariamente um golpe.</p>
+          <div class="hero-actions"><button id="startChallengeBtn" class="btn btn-primary btn-lg">Começar desafio</button><button id="continueBtn" class="btn btn-secondary btn-lg hidden">Continuar de onde parei</button></div>
+          <div class="trust-row" aria-label="Características da experiência"><span><i data-icon="check" data-icon-size="15"></i> Dados fictícios</span><span><i data-icon="check" data-icon-size="15"></i> Sem cadastro</span><span><i data-icon="check" data-icon-size="15"></i> Progresso local</span></div>
+        </div>
+
+        <div class="hero-panel" aria-label="Resumo dos desafios">
+          <div class="security-orbit" aria-hidden="true"><div class="orbit-ring ring-one"></div><div class="orbit-ring ring-two"></div><div class="shield-core"><span data-icon="shield" data-icon-size="48"></span></div><span class="orbit-node node-a" data-icon="mail" data-icon-size="20"></span><span class="orbit-node node-b" data-icon="smartphone" data-icon-size="20"></span><span class="orbit-node node-c" data-icon="message" data-icon-size="20"></span></div>
+          <div class="challenge-summary"><div><strong>8</strong><span>simulações</span></div><div><strong id="homeScore">0</strong><span>pontos</span></div><div><strong id="homeCompleted">0</strong><span>concluídas</span></div></div>
+        </div>
+      </div>
+
+      <div class="content-shell">
+        <section class="how-it-works" aria-labelledby="howTitle">
+          <div class="section-heading"><span class="section-kicker">COMO FUNCIONA</span><h2 id="howTitle">Você decide. A situação reage.</h2><p>Investigue detalhes, reúna evidências e só então tome uma decisão.</p></div>
+          <div class="step-grid">
+            <article class="step-card"><span>01</span><div class="step-icon" data-icon="eye" data-icon-size="28"></div><h3>Observe</h3><p>Leia mensagens, notificações e detalhes da interface.</p></article>
+            <article class="step-card"><span>02</span><div class="step-icon" data-icon="search" data-icon-size="28"></div><h3>Investigue</h3><p>Descubra evidências sem receber a resposta pronta.</p></article>
+            <article class="step-card"><span>03</span><div class="step-icon" data-icon="compass" data-icon-size="28"></div><h3>Decida</h3><p>Escolha uma ação e veja a situação evoluir.</p></article>
+            <article class="step-card"><span>04</span><div class="step-icon" data-icon="shield" data-icon-size="28"></div><h3>Aprenda</h3><p>Entenda o risco, inclusive quando a situação era legítima.</p></article>
+          </div>
+        </section>
+
+        <section class="challenge-preview" aria-labelledby="previewTitle">
+          <div class="section-heading compact"><span class="section-kicker">OS DESAFIOS</span><h2 id="previewTitle">Oito cenários, várias possibilidades</h2></div>
+          <div class="scenario-grid">
+            <article class="scenario-card" data-challenge-card="phishing"><div class="scenario-top"><span class="scenario-icon" data-icon="mail" data-icon-size="28"></span><span class="scenario-status">Não iniciado</span></div><h3>E-mail</h3><p>Analise remetente, urgência, links e a possibilidade de a mensagem ser legítima.</p><span class="scenario-tag">Phishing + mensagem legítima</span></article>
+            <article class="scenario-card" data-challenge-card="simswap"><div class="scenario-top"><span class="scenario-icon" data-icon="smartphone" data-icon-size="28"></span><span class="scenario-status">Não iniciado</span></div><h3>Linha móvel</h3><p>Descubra se a perda de sinal indica fraude ou uma indisponibilidade comum.</p><span class="scenario-tag">SIM Swap + falha legítima</span></article>
+            <article class="scenario-card" data-challenge-card="whatsapp"><div class="scenario-top"><span class="scenario-icon" data-icon="message" data-icon-size="28"></span><span class="scenario-status">Não iniciado</span></div><h3>Novo contato</h3><p>Converse, faça perguntas e procure sinais para decidir se o novo número é confiável.</p><span class="scenario-tag">Perfil falso + contato legítimo</span></article>
+            <article class="scenario-card" data-challenge-card="qrcode"><div class="scenario-top"><span class="scenario-icon" data-icon="qr-code" data-icon-size="28"></span><span class="scenario-status">Não iniciado</span></div><h3>QR Code</h3><p>Inspecione um código de pagamento e descubra se ele foi adulterado.</p><span class="scenario-tag">Quishing + QR legítimo</span></article>
+            <article class="scenario-card" data-challenge-card="support"><div class="scenario-top"><span class="scenario-icon" data-icon="monitor" data-icon-size="28"></span><span class="scenario-status">Não iniciado</span></div><h3>Suporte técnico</h3><p>Diferencie um alerta legítimo de uma página que tenta assustar e controlar sua decisão.</p><span class="scenario-tag">Falso suporte + atualização real</span></article>
+            <article class="scenario-card" data-challenge-card="marketplace"><div class="scenario-top"><span class="scenario-icon" data-icon="shopping-bag" data-icon-size="28"></span><span class="scenario-status">Não iniciado</span></div><h3>Marketplace</h3><p>Compare status, comprovante, conversa e taxas procurando inconsistências.</p><span class="scenario-tag">Comprovante falso + venda real</span></article>
+            <article class="scenario-card" data-challenge-card="job"><div class="scenario-top"><span class="scenario-icon" data-icon="briefcase" data-icon-size="28"></span><span class="scenario-status">Não iniciado</span></div><h3>Vaga de emprego</h3><p>Compare remetente, domínio, processo seletivo e condições da proposta.</p><span class="scenario-tag">Vaga falsa + convite legítimo</span></article>
+            <article class="scenario-card" data-challenge-card="boleto"><div class="scenario-top"><span class="scenario-icon" data-icon="receipt" data-icon-size="28"></span><span class="scenario-status">Não iniciado</span></div><h3>Cobrança</h3><p>Compare beneficiário, origem e identificadores de uma fatura antes do pagamento.</p><span class="scenario-tag">Boleto adulterado + fatura real</span></article>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="screen-simulation" class="screen simulation-screen" aria-labelledby="simulationTitle">
+      <div class="simulation-toolbar"><div><span id="simulationKicker" class="section-kicker">DESAFIO</span><h1 id="simulationTitle">Simulação</h1></div><div class="simulation-tools"><button id="hintBtn" class="btn btn-ghost"><span data-icon="lightbulb" data-icon-size="17"></span> Preciso de uma pista</button><button id="exitSimulationBtn" class="btn btn-ghost">Sair</button></div></div>
+      <div id="simulationRoot" class="simulation-root" aria-live="polite"></div>
+    </section>
+
+    <section id="screen-challenge-result" class="screen" aria-labelledby="challengeResultTitle">
+      <div class="result-shell narrow"><div id="challengeResultIcon" class="result-badge"></div><span class="section-kicker">ETAPA CONCLUÍDA</span><h1 id="challengeResultTitle">Desafio concluído</h1><p id="challengeResultIntro" class="result-intro"></p>
+        <div class="result-metrics"><div><strong id="challengePoints">0</strong><span>pontos nesta etapa</span></div><div><strong id="challengeSafe">0</strong><span>decisões seguras</span></div><div><strong id="challengeRisky">0</strong><span>ações de risco</span></div><div><strong id="challengeEvidence">0</strong><span>evidências encontradas</span></div></div>
+        <div id="challengeLessons" class="lesson-box"></div><button id="nextChallengeBtn" class="btn btn-primary btn-lg">Próximo desafio</button>
+      </div>
+    </section>
+
+    <section id="screen-learn" class="screen" aria-labelledby="learnTitle">
+      <div class="content-shell page-shell"><div class="section-heading"><span class="section-kicker">MODO APRENDIZADO</span><h1 id="learnTitle">Aprenda a identificar golpes</h1><p>O objetivo não é desconfiar de tudo, mas reconhecer padrões e confirmar informações.</p></div>
+        <div class="learn-grid">
+          <article class="learn-card"><div class="learn-icon" data-icon="mail" data-icon-size="30"></div><h2>Phishing</h2><h3>O que é</h3><p>Mensagens que tentam levar a vítima a clicar, informar dados ou executar uma ação imitando uma fonte confiável.</p><h3>Sinais comuns</h3><ul><li>Urgência ou ameaça.</li><li>Domínio parecido com o oficial.</li><li>Pedido incomum de dados ou código.</li><li>Link que não combina com o serviço.</li></ul><h3>Como evitar</h3><p>Acesse o serviço por conta própria e confirme o alerta. Observe também que mensagens legítimas podem não conter nenhum desses sinais.</p></article>
+          <article class="learn-card"><div class="learn-icon" data-icon="smartphone" data-icon-size="30"></div><h2>SIM Swap</h2><h3>O que é</h3><p>Fraude em que criminosos tentam assumir o número de telefone da vítima.</p><h3>Sinais comuns</h3><ul><li>Perda repentina de sinal.</li><li>SMS e chamadas param.</li><li>Redefinições de senha inesperadas.</li><li>Alterações de recuperação em contas.</li></ul><h3>Importante</h3><p>Perda de sinal sozinha não prova fraude. Consulte a operadora e procure sinais adicionais.</p></article>
+          <article class="learn-card"><div class="learn-icon" data-icon="message" data-icon-size="30"></div><h2>Perfil falso</h2><h3>Como funciona</h3><p>Alguém se apresenta como conhecido, normalmente com número novo, e tenta gerar confiança ou urgência.</p><h3>Sinais comuns</h3><ul><li>Pedido de dinheiro ou código.</li><li>Pressão para agir rápido.</li><li>Recusa de verificação.</li><li>Respostas vagas.</li></ul><h3>Como confirmar</h3><p>Use outro canal já conhecido. Um número novo legítimo também pode existir; o que importa é confirmar.</p></article>
+          <article class="learn-card"><div class="learn-icon" data-icon="qr-code" data-icon-size="30"></div><h2>QR Code falso</h2><h3>Como funciona</h3><p>Um código adulterado pode levar a uma cobrança, site ou beneficiário diferente do esperado.</p><h3>Sinais comuns</h3><ul><li>Adesivo sobre outro QR.</li><li>Destino estranho.</li><li>Beneficiário inesperado.</li><li>Pressão para pagar sem conferir.</li></ul><h3>Como evitar</h3><p>Confira a prévia, o beneficiário e valide pelo aplicativo ou serviço oficial quando possível.</p></article>
+          <article class="learn-card"><div class="learn-icon" data-icon="monitor" data-icon-size="30"></div><h2>Falso suporte técnico</h2><h3>Como funciona</h3><p>Pop-ups e contatos inesperados tentam convencer a vítima de que existe um problema urgente no dispositivo.</p><h3>Sinais comuns</h3><ul><li>Alerta dentro do navegador.</li><li>Número de telefone exibido pelo próprio pop-up.</li><li>Pedido de acesso remoto.</li><li>Taxa para “resolver” o problema.</li></ul><h3>Como evitar</h3><p>Feche o aviso e verifique a segurança pelas configurações e canais oficiais do fabricante.</p></article>
+          <article class="learn-card"><div class="learn-icon" data-icon="shopping-bag" data-icon-size="30"></div><h2>Golpe em marketplace</h2><h3>Como funciona</h3><p>O golpista pode enviar comprovantes falsos, pressionar pelo envio ou inventar uma taxa para liberar a venda.</p><h3>Sinais comuns</h3><ul><li>Pagamento não aparece no app.</li><li>Comprovante enviado por fora.</li><li>Taxa inesperada.</li><li>Pressa para postar o produto.</li></ul><h3>Como evitar</h3><p>Só envie quando a própria plataforma confirmar pagamento e autorização.</p></article>
+          <article class="learn-card"><div class="learn-icon" data-icon="briefcase" data-icon-size="30"></div><h2>Vaga de emprego falsa</h2><h3>Como funciona</h3><p>Uma falsa empresa ou recrutador oferece contratação fácil e tenta cobrar taxas ou obter documentos.</p><h3>Sinais comuns</h3><ul><li>Salário fora do padrão.</li><li>Contratação sem entrevista.</li><li>Pagamento para garantir a vaga.</li><li>Domínio diferente da empresa.</li></ul><h3>Como evitar</h3><p>Confirme a vaga no site oficial e não pague para participar de um processo seletivo.</p></article>
+          <article class="learn-card"><div class="learn-icon" data-icon="receipt" data-icon-size="30"></div><h2>Boleto/cobrança falsa</h2><h3>Como funciona</h3><p>Uma cobrança pode imitar uma empresa conhecida, mas direcionar o pagamento a outro beneficiário.</p><h3>Sinais comuns</h3><ul><li>Beneficiário diferente.</li><li>Canal inesperado.</li><li>Identificador divergente.</li><li>Ameaça de bloqueio imediato.</li></ul><h3>Como evitar</h3><p>Compare a cobrança com o app/portal oficial e confira os dados exibidos antes de pagar.</p></article>
+        </div>
+        <div class="common-examples"><h2>Abordagens que merecem atenção</h2><div class="example-chips"><span>“Sua conta será bloqueada hoje”</span><span>“Troquei de número, salva aí”</span><span>“Me manda o código que chegou”</span><span>“Preciso de um PIX agora”</span><span>“Confirme seus dados neste link”</span><span>“Pague pelo QR Code para evitar multa”</span><span>“Seu computador está infectado, ligue agora”</span><span>“Pague a taxa para liberar sua venda”</span><span>“Você foi contratado sem entrevista”</span><span>“Fatura vence hoje, pague o anexo”</span></div></div>
+      </div>
+    </section>
+
+    <section id="screen-prevention" class="screen" aria-labelledby="preventionTitle"><div class="content-shell page-shell"><div class="section-heading"><span class="section-kicker">PROTEÇÃO DIGITAL</span><h1 id="preventionTitle">Como evitar golpes digitais?</h1><p>Clique em cada cartão para abrir uma explicação curta.</p></div><div id="preventionGrid" class="prevention-grid"></div></div></section>
+
+    <section id="screen-final" class="screen" aria-labelledby="finalTitle">
+      <div class="result-shell"><div class="final-hero"><div class="result-badge large"><span data-icon="trophy" data-icon-size="42"></span></div><span class="section-kicker">DESAFIO CONCLUÍDO</span><h1 id="finalTitle">Seu relatório de segurança</h1><p>Veja como você investigou, decidiu e reagiu ao longo das oito simulações.</p></div>
+        <div class="final-score-card"><div class="score-ring" id="scoreRing"><span id="finalScore">0</span><small id="finalScoreMax">/3000</small></div><div><span class="metric-label">DESEMPENHO</span><h2 id="performanceLabel">—</h2><p id="performanceText"></p><div class="inline-final-metrics"><span><i data-icon="clock" data-icon-size="16"></i> <strong id="finalTime">—</strong></span><span><i data-icon="search" data-icon-size="16"></i> <strong id="finalEvidence">0</strong> evidências</span></div></div></div>
+
+        <div class="final-grid"><section class="panel-card"><h2>Seu perfil</h2><div id="profileBadge" class="profile-badge"></div><h3 id="profileTitle">—</h3><p id="profileText"></p><div class="caution-meter"><div><span>Índice de cautela</span><strong id="cautionIndex">0%</strong></div><div class="caution-track"><span id="cautionBar"></span></div></div><small>Classificação educativa baseada apenas nas escolhas desta simulação.</small></section>
+          <section class="panel-card"><h2>Resumo das decisões</h2><div class="metric-list"><div><span>Seguras</span><strong id="finalSafe">0</strong></div><div><span>Arriscadas</span><strong id="finalRisky">0</strong></div><div><span>Perigosas</span><strong id="finalDanger">0</strong></div><div><span>Pistas usadas</span><strong id="finalHints">0</strong></div></div></section></div>
+
+        <section class="panel-card"><h2>Desempenho por desafio</h2><div id="challengeBreakdown" class="breakdown-list"></div></section>
+        <section class="panel-card"><h2>Sua jornada de decisões</h2><p class="panel-intro">As últimas decisões da rodada, na ordem em que aconteceram.</p><div id="decisionJourney" class="journey-list"></div></section>
+        <section class="panel-card"><h2>Conquistas</h2><div id="achievementGrid" class="achievement-grid"></div></section>
+        <section class="panel-card"><h2>Recomendações personalizadas</h2><div id="recommendations" class="recommendation-list"></div></section>
+        <section class="panel-card"><h2>O que você aprendeu</h2><div class="learning-summary"><span>Desconfie da urgência.</span><span>Observe remetentes e links.</span><span>Não compartilhe códigos.</span><span>Confirme pedidos por outro canal.</span><span>Procure canais oficiais.</span><span>Um sinal isolado nem sempre prova fraude.</span><span>Confira beneficiários antes de pagar.</span><span>Valide vagas e vendas em plataformas oficiais.</span><span>Pop-ups não são diagnósticos do sistema.</span></div></section>
+        <div class="final-actions"><button id="reviewLearningBtn" class="btn btn-secondary btn-lg">Revisar aprendizado</button><button id="restartBtn" class="btn btn-danger-outline btn-lg">Reiniciar desafio</button></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="modalOverlay" class="modal-overlay hidden" role="presentation"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalText"><button id="modalClose" class="modal-close" aria-label="Fechar janela">×</button><div id="modalIcon" class="modal-icon"></div><h2 id="modalTitle">Título</h2><div id="modalText" class="modal-text"></div><div id="modalActions" class="modal-actions"></div></div></div>
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+  <script src="js/icons.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/scoring.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/phishing.js"></script>
+  <script src="js/simswap.js"></script>
+  <script src="js/whatsapp.js"></script>
+  <script src="js/qrcode.js"></script>
+  <script src="js/support.js"></script>
+  <script src="js/marketplace.js"></script>
+  <script src="js/job.js"></script>
+  <script src="js/boleto.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
